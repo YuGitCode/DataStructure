@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 //Note: this Binary tree uses String as its key. Modification is required if using int as Key
 public class BST{
     //Inner TreeNode Class
@@ -7,7 +7,7 @@ public class BST{
         private Object value;
         private TreeNode leftChild;
         private TreeNode rightChild;
-
+        
         public TreeNode(String inKey,Object inValue)
         {
             if(inKey == null)
