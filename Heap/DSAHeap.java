@@ -57,7 +57,7 @@ public class DSAHeap
         }
 
     }
-
+    
     public void trickleDown(int curIdx)
     {
         int lChildIdx = curIdx * 2 + 1;

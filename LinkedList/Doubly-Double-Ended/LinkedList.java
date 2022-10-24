@@ -54,6 +54,7 @@ public class LinkedList implements Iterable
             throw new IllegalArgumentException(" List is empty ");
         }else
         {
+            //Get the first item in list
             val = head.getValue();
         }
 
@@ -68,6 +69,7 @@ public class LinkedList implements Iterable
             throw new IllegalArgumentException(" List is empty ");
         }else
         {
+            //Get the Last item in list
             val = tail.getValue();
         }
 
@@ -82,13 +84,15 @@ public class LinkedList implements Iterable
             throw new IllegalArgumentException(" List is Empty ~ Nothing to Remove ");
         }else
         {
+
             val = head.getValue();
+            //if there only one item in list.
             if(head == tail)
-            {
+            {   //Set head and tail to null.
                 head = null;
                 tail = null;
             }else
-            {   
+            {   //point the head cursor to the next item inline.
                 head = head.getNext();
                 head.setPrev(null);
             }
@@ -106,14 +110,15 @@ public class LinkedList implements Iterable
         {
             throw new IllegalArgumentException(" List is empty ~ Nothing to Remove ");
         }else 
-        {
+        {   //if there only one item in list.
             val = tail.getValue();
             if( head == tail)
-            {
+            {   //set head and tail to null.
                 head = null;
                 tail = null;
             }else
             {
+                //point the head cursor to the previous item inline.
                 tail = tail.getPrev();
                 tail.setNext(null);
             }

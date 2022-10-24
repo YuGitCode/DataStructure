@@ -21,7 +21,7 @@ public class DSAGraph {
         }else
         {
             if(!hasVertex(value))//Check if vertex is already being added
-            {
+            {   //Add vertex to the end of the linkedlist
                 vertices.insertLast(new DSAGraphVertex(value));
                 vertexCount++;
 
@@ -60,7 +60,7 @@ public class DSAGraph {
             vertex1.addEdge(vertex2);
             vertex2.addEdge(vertex1);
         }
-
+        
         edgeCount++;
     }
 
@@ -69,6 +69,7 @@ public class DSAGraph {
     public boolean hasVertex(String label)
     {
         boolean found = false;
+        //Look through the list of vertices to check if vertex exists.
         for(Object o: vertices)
         {
             if(((DSAGraphVertex)o).getLabel().equals(label))

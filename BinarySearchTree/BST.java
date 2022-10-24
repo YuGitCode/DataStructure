@@ -124,17 +124,12 @@ public class BST{
 
         }else if(key.equals(curNode.getKey()))
         {
-            //System.out.println("deleting: "+curNode.getKey());
             updateNode = deleteNode(key,curNode);
-            //System.out.println("deleting: "+curNode.getKey());
-
         }else if(key.compareTo(curNode.getKey())<0)
         {
-           // System.out.println("Left: " +" key: "+key+" "+ curNode.getLeft());
             curNode.setLeft(deleteRec(key,curNode.getLeft()));
         }else
         {
-           // System.out.println("Left: " +" key: "+key+" "+ curNode.getRight());
             curNode.setRight(deleteRec(key,curNode.getRight()));
         }
 
@@ -146,18 +141,15 @@ public class BST{
         TreeNode updateNode = null;
         if( ( deleteNode.getLeft() == null ) && ( deleteNode.getRight() == null ) )
         {
-            //System.out.println("Child is null");
             updateNode = null;//Node has no child
             
         }else if( ( deleteNode.getLeft() != null ) && ( deleteNode.getRight() == null ) )
         {
             updateNode = deleteNode.getLeft();//has a child on the left
-            //System.out.println("Deleted Node: " + updateNode.getKey());
 
         }else if( ( deleteNode.getLeft() == null ) && ( deleteNode.getRight() != null ) )
         {
             updateNode = deleteNode.getRight();//has a child on the right
-           // System.out.println("Deleted Node: " + updateNode.getKey());
 
         }else{
             updateNode = promoteSuccessor(deleteNode.getRight());//has two child.
